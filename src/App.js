@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import { useRoutes } from "hookrouter";
+import "./App.css";
+import StartGame from "./StartGame";
+import Game from "./Game.js";
+import Result from "./Result";
+import { StyledContainer } from "./Styled";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+//routing definition
+const routes = {
+  "/": () => <StartGame />,
+  "/game/:id": ({ id }) => <Game id={id} />,
+  "/result": () => <Result />,
+};
 
+const App = () => {
+  const routeResult = useRoutes(routes);
+  return <StyledContainer>{routeResult}</StyledContainer>;
+};
 export default App;

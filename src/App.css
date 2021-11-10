@@ -1,38 +1,96 @@
 .App {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.frame {
+  flex: 2;
   display: flex;
   flex-direction: column;
+}
+
+.frame:last-child {
+  flex: 3;
+}
+
+.frame-number {
+  flex: 1;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-weight: bold;
+  background: #7ca2b152;
+  width: 50px;
 }
 
-.App-link {
-  color: #61dafb;
+.frame-score {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  border-top: 1px solid black;
+  border-left: 1px solid black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.running-score {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+  height: 25px;
+  box-sizing: border-box;
+}
+
+.frame:last-child .frame-score {
+  border-right: 1px solid black;
+}
+
+.frame:last-child .running-score {
+  border-right: 1px solid black;
+}
+
+.box {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 25px;
+}
+
+.box.right {
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.strike {
+  background: #546e7a;
+}
+
+.spaer {
+  width: 0;
+  height: 0;
+  border-bottom: 23px solid #546e7a;
+  border-left: 24px solid transparent;
+}
+.extra {
+  display: none;
+}
+
+.frame:last-child div.extra {
+  display: flex;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.frame:last-child div.left {
+  border-bottom: 1px solid black;
+}
+
+.frame-score div.right {
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+}
+th.MuiTableCell-root.MuiTableCell-head.MuiTableCell-sizeMedium.css-1ygcj2i-MuiTableCell-root {
+  text-align: center;
+}
+td.MuiTableCell-root.MuiTableCell-body.MuiTableCell-sizeMedium.css-1ex1afd-MuiTableCell-root {
+  text-align: center;
 }

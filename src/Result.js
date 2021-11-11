@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import bowlingIcon from "./assets/bowling.png";
-import { StyledStartBoard, StyledStartImg, StylesStartData, SyledTiltle } from "./Styled";
+import { StyledStartBoard, StyledStartImg, SyledTiltle } from "./Styled";
 import { topScore } from "./DataService.js";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
